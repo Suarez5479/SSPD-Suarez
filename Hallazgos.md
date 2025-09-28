@@ -5,16 +5,9 @@ La base contiene 600 encuestas con información demográfica, de caracterizació
 
 Respecto a la atención, la dirección de residencia coincide con la de la factura en la mayoría de los casos. Los puntos de atención más frecuentes son los SuperCade (Américas y Kennedy en primer lugar). En relación con las empresas, sobresalen Acueducto, Vanti y Enel. Los principales motivos de visita se relacionan con inconformidad frente a valores de la factura, suspensión del servicio y solicitudes de información.
 
-## Problemas de calidad de datos
-- Presencia de nombres de variables muy extensos, lo que dificulta su manejo en análisis y reportes.
-- Columnas con la categoría “Otro” que en realidad contienen texto libre heterogéneo.
-- Inconsistencias en la escritura de nombres de puntos de atención (ejemplo: “Super Cade 30” y “SUPER CADE 30”).
-- Existencia de categorías con muy baja frecuencia que reducen la claridad en los resultados.
-- Aparición de columnas vacías o con valores nulos en el 100% de los registros.
+## 2. Problemas de calidad detectados
+- Hay columnas completamente vacías o casi sin información: `Otro`, `Otro.3`, `Otro.4`, `Otro.6`, `Otro.9`, `Otro.15`, `Otro.17`.  
+- En los campos "Otro" con texto libre, hay respuestas muy variadas, algunas repetidas con pequeñas diferencias de escritura.  
+- Se identifican preguntas con una sola opción de respuesta (variables casi constantes), que no aportan variabilidad al análisis.  
+- Existen columnas con demasiados valores distintos (alta cardinalidad), que hacen difícil resumir la información sin agrupar.  
 
-## Propuestas de limpieza
-- Reducir y estandarizar los nombres de columnas.
-- Unificar categorías repetidas considerando mayúsculas/minúsculas y tildes.
-- Separar el texto libre de “Otro” en una columna específica para su análisis cualitativo.
-- Evaluar la pertinencia de agrupar categorías de baja frecuencia en la opción “Otros”.
-- Documentar las variables en un diccionario de datos para mejorar consistencia y trazabilidad.
